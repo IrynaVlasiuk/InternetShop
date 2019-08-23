@@ -11,8 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
-Route::get('/category', 'HomeController@index');
-Route::get('/show-more{id}', 'HomeController@show');
+Route::get('/products', 'ProductController@index');
+Route::get('/show/{id}', 'ProductController@show');
 Route::get('/modification{id}', 'HomeController@modifications');
 Route::get('//modification/{id}/value/{value}', 'HomeController@getProductsByModification');
