@@ -17,9 +17,4 @@
             @endforeach
         </select>
     </div>
-    <div class="col-md-4 values">
-        <div class="title-values">Values</div>
-        <select name="modification-value" id="select-modification-value">
-        </select>
-    </div>
 </div>

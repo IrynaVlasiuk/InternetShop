@@ -2,6 +2,19 @@
 
 @section('content')
     <div class="container">
+        <div class="row">
+            <div class="col-md-6 hidden">
+                <div>Values</div>
+                <select name="modification-value" id="select-modification-value">
+                    <option value="">Choose value</option>
+                    @foreach($modifications as $modification)
+                        @if($modification->pivot)
+                        <option value="{{ $modification->pivot->value }}" name="value">{{ $modification->pivot->value }}</option>
+                        @endif
+                    @endforeach
+                </select>
+            </div>
+        </div>
         <div class="row product-list">
                 <table>
                     <tr>
@@ -45,32 +58,21 @@
         });
 
         function renderElements(data) {
-            let result = $('<div/>').append(data).find('.row.product-list').html();
-            $('.row.product-list').html(result);
+            let result = $('<div/>').append(data).find('.container').html();
+            $('.container').html(result);
+            $('.hidden').show();
         }
 
-        function showModificationsValue(data) {
-            let modifications = data.modifications;
-            $('.title-values').show();
-            $('#select-modification-value').empty();
-            if(modifications) {
-                $('#select-modification-value').show();
-                for(let i in modifications){
-                    $('#select-modification-value').append('<option value="'+ modifications[i].pivot.value +'">'+ modifications[i].pivot.value+'</option>');
-                }
-            } else {
-                $('#select-modification-value').hide();
-            }
-        }
-
-        $('#select-modification-value').on('change', function () {
+        $('.container').delegate('#select-modification-value','change', function () {
+            let category_id = $('#select-category').children("option:selected").val();
             let modification_id = $('#select-modification').children("option:selected").val();
             let value = $(this).children("option:selected").val();
-            let data = {};
-            ajaxHandler('GET', '/modification/'+modification_id+'/value/'+value, data, renderElements);
+            let data = { category_id: category_id, modification_id: modification_id, value: value };
+            $("#select-modification-value").val(value);
+            ajaxHandler('GET', '/products', data, renderElements);
         })
 
-        $('.product-list').delegate('a[id="show-more"]', 'click', function () {
+        $('.container').delegate('a[id="show-more"]', 'click', function () {
             let product_id = $(this).parent().siblings('.id').text();
             let data = {};
             let context  = $(this);
@@ -102,7 +104,7 @@
             margin-bottom: 40px;
         }
 
-        .title-values, #select-modification-value{
+        .hidden{
             display: none;
         }
 

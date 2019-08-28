@@ -20,6 +20,15 @@ class ProductController extends Controller
             $products = $products->whereHas('modifications', function ($q) use ($modification_id) {
                 $q->where('modification_id', $modification_id);
             });
+
+            $modifications = Modification::find($modification_id)->products;
+
+            if($request->value) {
+                $value = $request->value;
+                $products = $products->whereHas('modifications', function ($q) use ($value) {
+                    $q->where('value', $value);
+                });
+            }
         }
 
         if( $request->category_id) {
@@ -37,4 +46,5 @@ class ProductController extends Controller
         $modifications = Product::find($id)->modifications;
         return response()->json(['data' => $modifications]);
     }
+
 }

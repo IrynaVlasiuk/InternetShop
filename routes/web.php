@@ -11,7 +11,9 @@
 |
 */
 
+Route::get('/', function (){
+    return redirect()->to('/products');
+});
+
 Route::get('/products', 'ProductController@index');
 Route::get('/show/{id}', 'ProductController@show');
-Route::get('/modification{id}', 'HomeController@modifications');
-Route::get('//modification/{id}/value/{value}', 'HomeController@getProductsByModification');
