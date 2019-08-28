@@ -49183,28 +49183,6 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/js/ajaxHandler.js":
-/*!*************************************!*\
-  !*** ./resources/js/ajaxHandler.js ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function ajaxHandler(type, url, data, success, error) {
-  $.ajax({
-    type: type,
-    url: url,
-    headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    },
-    data: data,
-    success: success,
-    error: error
-  });
-}
-
-/***/ }),
-
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -49218,10 +49196,6 @@ function ajaxHandler(type, url, data, success, error) {
  * building robust, powerful web applications using Vue and Laravel.
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
-__webpack_require__(/*! ./ajaxHandler */ "./resources/js/ajaxHandler.js");
-
-__webpack_require__(/*! ./getProducts */ "./resources/js/getProducts.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
@@ -49374,17 +49348,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/getProducts.js":
-/*!*************************************!*\
-  !*** ./resources/js/getProducts.js ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\OSPanel\\domains\\InternetShop\\resources\\js\\getProducts.js: Unexpected token, expected \",\" (3:1)\n\n\u001b[0m \u001b[90m 1 | \u001b[39m$(document)\u001b[33m.\u001b[39mready(\u001b[36mfunction\u001b[39m(){\u001b[0m\n\u001b[0m \u001b[90m 2 | \u001b[39m    console\u001b[33m.\u001b[39mlog(\u001b[32m'test'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 3 | \u001b[39m}\u001b[0m\n\u001b[0m \u001b[90m   | \u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n    at Parser.raise (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:6325:17)\n    at Parser.unexpected (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:7642:16)\n    at Parser.expect (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:7628:28)\n    at Parser.parseCallExpressionArguments (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:8606:14)\n    at Parser.parseSubscript (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:8514:29)\n    at Parser.parseSubscripts (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:8433:19)\n    at Parser.parseExprSubscripts (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:8422:17)\n    at Parser.parseMaybeUnary (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:8392:21)\n    at Parser.parseExprOps (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:8267:23)\n    at Parser.parseMaybeConditional (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:8240:23)\n    at Parser.parseMaybeAssign (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:8187:21)\n    at Parser.parseExpression (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:8135:23)\n    at Parser.parseStatementContent (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:9958:23)\n    at Parser.parseStatement (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:9829:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:10405:25)\n    at Parser.parseBlockBody (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:10392:10)\n    at Parser.parseTopLevel (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:9758:10)\n    at Parser.parse (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:11270:17)\n    at parse (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\parser\\lib\\index.js:11306:38)\n    at parser (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:170:34)\n    at normalizeFile (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:138:11)\n    at runSync (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\core\\lib\\transformation\\index.js:44:43)\n    at runAsync (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\core\\lib\\transformation\\index.js:35:14)\n    at process.nextTick (C:\\OSPanel\\domains\\InternetShop\\node_modules\\@babel\\core\\lib\\transform.js:34:34)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
-
-/***/ }),
-
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -49403,8 +49366,8 @@ throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\OSPanel\domains\InternetShop\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\OSPanel\domains\InternetShop\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Ira.V\OSPanel-NEW\domains\InternetShop\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Ira.V\OSPanel-NEW\domains\InternetShop\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
